@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://mr1vma24he7k"]
+
+[ext_resource type="Script" path="res://sorcerer.gd" id="1_h7fju"]
+[ext_resource type="Texture2D" uid="uid://bs8q6riy0phaw" path="res://icon.svg" id="1_n6w1o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3j24t"]
+radius = 7.16113
+height = 33.7596
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_464rw"]
+a = Vector2(-254, 15)
+b = Vector2(316, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rochx"]
+size = Vector2(91, 20)
+
+[node name="sorcerer" type="CharacterBody2D"]
+position = Vector2(97, 43)
+script = ExtResource("1_h7fju")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.885, 1.885)
+texture = ExtResource("1_n6w1o")
+region_enabled = true
+region_rect = Rect2(14, 65, 16, 38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.955, 1.955)
+shape = SubResource("CapsuleShape2D_3j24t")
+
+[node name="came" type="Area2D" parent="."]
+position = Vector2(0, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="came"]
+shape = SubResource("SegmentShape2D_464rw")
+
+[node name="hit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hit"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_rochx")
+
+[connection signal="body_entered" from="came" to="." method="_on_came_body_entered"]
+[connection signal="body_exited" from="came" to="." method="_on_came_body_exited"]
+[connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
+[connection signal="body_exited" from="hit" to="." method="_on_hit_body_exited"]

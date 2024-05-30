@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckvgyvclnwggo"]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="1_cital"]
+[ext_resource type="FontFile" uid="uid://bdj3y0hrswnq7" path="res://Kufyan-Arabic-UltraLight.ttf" id="1_kd273"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkut5"]
+content_margin_left = 10.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 0)
+expand_margin_left = 12.0
+expand_margin_right = 8.0
+expand_margin_bottom = 15.0
+
+[node name="DialogueLabel" type="RichTextLabel"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/table_odd_row_bg = Color(1, 1, 1, 1)
+theme_override_colors/table_even_row_bg = Color(1, 1, 1, 1)
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_kd273")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wkut5")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+visible_characters_behavior = 1
+script = ExtResource("1_cital")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")

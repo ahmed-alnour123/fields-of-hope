@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcdukjwlhatth"]
+
+[ext_resource type="AudioStream" uid="uid://bkoesy0b16ud7" path="res://sounds/ambient-classical-guitar-144998.mp3" id="1_swph2"]
+[ext_resource type="Script" path="res://AudioStreamPlayer2s.gd" id="2_vhj14"]
+
+[node name="main" type="AudioStreamPlayer"]
+stream = ExtResource("1_swph2")
+volume_db = -0.63
+script = ExtResource("2_vhj14")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

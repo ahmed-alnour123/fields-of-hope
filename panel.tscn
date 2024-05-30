@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf6lmi3pnnna4"]
+
+[ext_resource type="Script" path="res://panel.gd" id="1_53f3a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uvbn"]
+bg_color = Color(0.262745, 0.686275, 0.568627, 1)
+
+[node name="Panel" type="Panel"]
+offset_right = 654.0
+offset_bottom = 366.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5uvbn")
+script = ExtResource("1_53f3a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,0 +1,335 @@
+[gd_scene load_steps=16 format=3 uid="uid://drg3e6otb03yx"]
+
+[ext_resource type="Theme" uid="uid://dtypeh75jt5n3" path="res://mainmenu.tres" id="1_gpu4v"]
+[ext_resource type="Script" path="res://Button.gd" id="1_r44ac"]
+[ext_resource type="Texture2D" uid="uid://2nvgh7ylb3u2" path="res://Main menu القائمة.png" id="2_88vgc"]
+[ext_resource type="Script" path="res://control.gd" id="2_p42wj"]
+[ext_resource type="Texture2D" uid="uid://cy0u0qbp2jn2d" path="res://wood.png" id="3_sxg7q"]
+[ext_resource type="Script" path="res://quit.gd" id="4_03k01"]
+[ext_resource type="Script" path="res://credits.gd" id="5_38vyj"]
+[ext_resource type="FontFile" uid="uid://bdj3y0hrswnq7" path="res://Kufyan-Arabic-UltraLight.ttf" id="6_1l3rv"]
+[ext_resource type="Script" path="res://AnimationPlayer.gd" id="7_ayery"]
+[ext_resource type="Texture2D" uid="uid://dtjpxb0yhbhne" path="res://title.png" id="7_sfdk7"]
+[ext_resource type="Texture2D" uid="uid://il0qwr4ele4v" path="res://flowes.png" id="8_mh0qo"]
+
+[sub_resource type="Animation" id="Animation_ixudb"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_83t7c"]
+resource_name = "new_animation"
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Img20240302170643:self_modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.301961, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Img20240302170643:self_modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.301961, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Img20240302170643:self_modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.301961, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Img20240302170643:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasGroup:self_modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4, 6)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasGroup:self_modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4, 6)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasGroup:self_modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4, 6)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasGroup:self_modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4, 6)
+}
+
+[sub_resource type="Animation" id="Animation_evyon"]
+resource_name = "new_animation_2"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Img20240302170643:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Img20240302170643:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Img20240302170643:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Img20240302170643:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasGroup/Control:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasGroup/Control:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasGroup/Control:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasGroup/Control:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5hdy"]
+_data = {
+"RESET": SubResource("Animation_ixudb"),
+"new_animation": SubResource("Animation_83t7c"),
+"new_animation_2": SubResource("Animation_evyon")
+}
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gpu4v")
+script = ExtResource("2_p42wj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -61.0
+offset_top = -61.0
+offset_right = 1226.0
+offset_bottom = 729.0
+color = Color(0, 0, 0, 1)
+
+[node name="Img20240302170643" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(570.445, 313.5)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("2_88vgc")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+position = Vector2(627, 0)
+
+[node name="Control" type="Control" parent="CanvasGroup"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_gpu4v")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Sprite2D" parent="CanvasGroup/Control"]
+position = Vector2(313.823, 258.5)
+scale = Vector2(0.610599, 0.610599)
+texture = ExtResource("7_sfdk7")
+
+[node name="Flowes" type="Sprite2D" parent="CanvasGroup/Control"]
+position = Vector2(244, 419)
+scale = Vector2(0.573864, 0.67271)
+texture = ExtResource("8_mh0qo")
+
+[node name="Wood" type="Sprite2D" parent="CanvasGroup/Control"]
+position = Vector2(324.5, 416.531)
+scale = Vector2(0.835514, 0.835902)
+texture = ExtResource("3_sxg7q")
+
+[node name="Wood4" type="Sprite2D" parent="CanvasGroup/Control"]
+position = Vector2(324.5, 486.531)
+scale = Vector2(0.835514, 0.835902)
+texture = ExtResource("3_sxg7q")
+
+[node name="Wood5" type="Sprite2D" parent="CanvasGroup/Control"]
+position = Vector2(324.5, 554.531)
+scale = Vector2(0.835514, 0.835902)
+texture = ExtResource("3_sxg7q")
+
+[node name="play" type="Button" parent="CanvasGroup/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.1875
+anchor_top = 0.236725
+anchor_right = 3.6625
+anchor_bottom = -0.638275
+offset_left = 254.5
+offset_top = 364.531
+offset_right = 320.5
+offset_bottom = 453.531
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_1l3rv")
+theme_override_font_sizes/font_size = 25
+text = "ابدأ"
+script = ExtResource("1_r44ac")
+metadata/_edit_use_anchors_ = true
+
+[node name="back" type="Button" parent="CanvasGroup/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0875
+anchor_top = 0.411725
+anchor_right = 2.2625
+anchor_bottom = -0.663275
+offset_left = 209.5
+offset_top = 494.531
+offset_right = 375.5
+offset_bottom = 594.531
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_1l3rv")
+theme_override_font_sizes/font_size = 25
+text = "خروج"
+script = ExtResource("4_03k01")
+metadata/_edit_use_anchors_ = true
+
+[node name="credits" type="Button" parent="CanvasGroup/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.4125
+anchor_top = 1.41172
+anchor_right = 1.9125
+anchor_bottom = 0.261725
+offset_left = 223.5
+offset_top = 385.531
+offset_right = 389.5
+offset_bottom = 485.531
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_1l3rv")
+theme_override_font_sizes/font_size = 25
+text = "فريق العمل"
+script = ExtResource("5_38vyj")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_o5hdy")
+}
+script = ExtResource("7_ayery")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="CanvasGroup/Control/play" to="CanvasGroup/Control/play" method="_on_pressed"]
+[connection signal="pressed" from="CanvasGroup/Control/back" to="CanvasGroup/Control/back" method="_on_pressed"]
+[connection signal="pressed" from="CanvasGroup/Control/credits" to="CanvasGroup/Control/credits" method="_on_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="CanvasGroup/Control/play" method="_on_animation_player_animation_finished"]

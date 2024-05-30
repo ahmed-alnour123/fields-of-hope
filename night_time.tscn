@@ -1,0 +1,320 @@
+[gd_scene load_steps=28 format=3 uid="uid://c6g6sk57vdg40"]
+
+[ext_resource type="Texture2D" uid="uid://byyhyu87hw1pu" path="res://Night time.png" id="1_efhhe"]
+[ext_resource type="Script" path="res://night_time.gd" id="1_o6goy"]
+[ext_resource type="Texture2D" uid="uid://du02eot57g7pb" path="res://fire.png" id="2_jke20"]
+[ext_resource type="Script" path="res://AnimatedSprite2D.gd" id="3_q0yy3"]
+[ext_resource type="Script" path="res://AnimationPlayer.gd" id="4_hxpio"]
+[ext_resource type="Script" path="res://AnimationPlayer2.gd" id="5_di8ip"]
+[ext_resource type="AudioStream" uid="uid://c2q5iss2wjwjm" path="res://sounds/campfire-crackling-fireplace-sound-119594.mp3" id="5_pey4u"]
+[ext_resource type="Script" path="res://AudioStreamPlayer.gd" id="6_l1l8i"]
+[ext_resource type="AudioStream" uid="uid://b4arrvwgn15iq" path="res://sounds/night-village-ambience-dogs-barking-155059.mp3" id="7_rly2p"]
+[ext_resource type="Script" path="res://AudioStreamPlayer2.gd" id="8_wgu6t"]
+[ext_resource type="AudioStream" uid="uid://ctg7w7hlxei30" path="res://sounds/MP3_160K_2.mp3" id="9_vmh76"]
+[ext_resource type="Script" path="res://AudioStreamPlayer3.gd" id="10_8ssjn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr0wo"]
+atlas = ExtResource("2_jke20")
+region = Rect2(0, 0, 676, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxgxj"]
+atlas = ExtResource("2_jke20")
+region = Rect2(676, 0, 676, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7plaj"]
+atlas = ExtResource("2_jke20")
+region = Rect2(1352, 0, 676, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nhm2"]
+atlas = ExtResource("2_jke20")
+region = Rect2(2028, 0, 676, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj8dy"]
+atlas = ExtResource("2_jke20")
+region = Rect2(2704, 0, 676, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v0qj"]
+atlas = ExtResource("2_jke20")
+region = Rect2(3380, 0, 676, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lwy8"]
+atlas = ExtResource("2_jke20")
+region = Rect2(4056, 0, 676, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rssgt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr0wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxgxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7plaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nhm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj8dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v0qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lwy8")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_2cxk7"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_tdrnh"]
+resource_name = "new_animation"
+length = 13.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(5.1, 13)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-745, -0.25, 0, 0.25, 0, 374, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(5.1, 13)
+}
+
+[sub_resource type="Animation" id="Animation_rwdlg"]
+resource_name = "new_animation_2"
+length = 5.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6fyix"]
+_data = {
+"RESET": SubResource("Animation_2cxk7"),
+"new_animation": SubResource("Animation_tdrnh"),
+"new_animation_2": SubResource("Animation_rwdlg")
+}
+
+[sub_resource type="Animation" id="Animation_njtrk"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NightTime:self_modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NightTime:self_modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NightTime:self_modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NightTime:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasGroup:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_lpx6p"]
+resource_name = "fade"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NightTime:self_modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NightTime:self_modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NightTime:self_modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NightTime:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasGroup:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nrvxb"]
+_data = {
+"RESET": SubResource("Animation_njtrk"),
+"fade": SubResource("Animation_lpx6p")
+}
+
+[node name="NightTime" type="Node2D"]
+script = ExtResource("1_o6goy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1419.0
+offset_top = -1365.0
+offset_right = 1002.0
+offset_bottom = 1954.0
+color = Color(0, 0, 0, 1)
+
+[node name="NightTime" type="Sprite2D" parent="."]
+position = Vector2(0, -167)
+scale = Vector2(0.601302, 0.601302)
+texture = ExtResource("1_efhhe")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+position = Vector2(0, 305)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasGroup"]
+position = Vector2(13.625, 252)
+scale = Vector2(0.549286, 0.549286)
+sprite_frames = SubResource("SpriteFrames_rssgt")
+animation = &"fire"
+frame_progress = 0.576164
+script = ExtResource("3_q0yy3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -500)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6fyix")
+}
+script = ExtResource("4_hxpio")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_nrvxb")
+}
+script = ExtResource("5_di8ip")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_pey4u")
+volume_db = 6.559
+script = ExtResource("6_l1l8i")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_vmh76")
+volume_db = 5.621
+script = ExtResource("8_wgu6t")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rly2p")
+script = ExtResource("10_8ssjn")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer2" to="AnimationPlayer2" method="_on_animation_finished"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
+[connection signal="finished" from="AudioStreamPlayer2" to="AudioStreamPlayer2" method="_on_finished"]
+[connection signal="finished" from="AudioStreamPlayer3" to="AudioStreamPlayer3" method="_on_finished"]
